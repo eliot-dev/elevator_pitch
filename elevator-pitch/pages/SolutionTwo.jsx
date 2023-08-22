@@ -11,6 +11,8 @@ const SolutionTwo = () => {
     return newA;
   }
 
+  // will need to .reduce() those values to get the total distance traveled
+
   console.log(diff(input));
 };
 export default SolutionTwo;
