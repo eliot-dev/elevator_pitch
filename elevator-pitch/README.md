@@ -14,25 +14,25 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Assumptions with this app
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+1. The elevator goes in order of selection
+2. Floors cannot be selected twice
+3. The 13th floor is bad luck and will not be displayed
+   - Going from floor 12 -> 14 will still count as 1 floor
+4. The time constant is measured in seconds
+   - The time traveled between a floor is 10 seconds
+5. The set number of floors in this building is 20
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Features not included
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- A toggle switch between normal elevator operations as well as how the prompt was phrased
+  - This would include the direction the elevator is traveling and would then calculate the time between the highest and lowest floors
+- A second solution that was simply an input form with various amounts of checks and error states
+  - In the git history I have left what my second solution would have been in theory
+- Stopping form inputs once the user pressed "Go", but in the interest of time I left that out.
+- An input to allow the user to decide the number of floors for this "building"
+  - This is something that I believe the app could handle with a few additional checks but opted to have that be a fixed value.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  
+ [oaRecording.webm](https://github.com/eliot-dev/elevator_pitch/assets/14044522/8d8a3f10-cfb6-4515-bc07-29229bd053a7)
