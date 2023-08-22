@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { useState } from "react";
 import styles from "./index.module.scss";
-import SolutionTwo from "./solutionTwo";
 import Floors from "../components/Floors";
 
 // assumptions:
@@ -13,7 +12,7 @@ import Floors from "../components/Floors";
 
 const Home = () => {
   const [startingFloor, setStartingFloor] = useState(
-    "Please select a starting floor"
+    "Select all floors to visit beginning with the starting floor and click go"
   );
   const [totalFloors] = useState(20);
   const [currentFloor, setCurrentFloor] = useState(startingFloor);
@@ -22,7 +21,10 @@ const Home = () => {
   const [showCalculation, setShowCalculation] = useState(false);
 
   const handleUpdateFloor = (floor) => {
-    if (startingFloor === "Please select a starting floor") {
+    if (
+      startingFloor ===
+      "Select all floors to visit beginning with the starting floor and click go"
+    ) {
       // remove the placeholder and splice in the
       // selected floor
       selectedFloors.splice(0, 1, floor);
